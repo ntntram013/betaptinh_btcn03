@@ -1,0 +1,87 @@
+<section class="calculate">
+    <div class="container-md mt-5">
+        <h3 class="p-2">Bé tập tính</h3>
+        <form method="post" onsubmit="return CheckB4Calculate()">
+            <div class="d-block p-2" >
+                <div class="row d-flex align-items-center">
+                    <div class="col-8 pl-4">
+                        <div class="form-group row">
+                            <label id="number1-label" for="number1" class="col-xl-3 col-xs-4  col-form-label">Số thứ nhất</label>
+                            <div class="col-9">
+                                <input type="text" class="form-control" id="number1" name="number1" value="{{number1}}" onchange="ErrorInput()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="operatorRadios" id="addRadio" value="add" {{checkRadio operator 'add'}}>
+                            <label class="form-check-label" for="addRadio">
+                                Cộng
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="operatorRadios" id="subRadio" value="sub" {{checkRadio operator 'sub'}}>
+                            <label class="form-check-label" for="subRadio">
+                                Trừ
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row d-flex align-items-center">
+                    <div class="col-8 pl-4">
+                        <div class="form-group row">
+                            <label id="number2-label" for="number2" class="col-xl-3 col-xs-4  col-form-label">Số thứ hai</label>
+                            <div class="col-9">
+                                <input type="text" class="form-control" id="number2" name ="number2" value="{{number2}}" onchange="ErrorInput()" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="operatorRadios" id="mulRadio" value="mul" {{checkRadio operator 'mul'}}>
+                            <label class="form-check-label" for="mulRadio">
+                                Nhân
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="operatorRadios" id="divRadio" value="div" {{checkRadio operator 'div'}}>
+                            <label class="form-check-label" for="divRadio">
+                                Chia
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8 pl-4">
+                        <div class="form-group row">
+                            <label for="output1" class="col-xl-3 col-xs-4 col-form-label">Kết quả</label>
+                            <div class="col-9">
+                                <input type="text" readonly class="form-control" id="output1" value="{{result}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-secondary" id="button-cal" onclick="CheckB4Calculate()">Tính</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pl-4">
+                        <div class="form-group row">
+                            <label for="noti" class="col-xl-2 col-xs-12  col-form-label">Thông báo</label>
+                            <div class="col-xl-9 col-xs-12">
+                                <div id="noti"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</section>
